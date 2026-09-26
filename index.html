@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Very Important Question 🦋</title>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+
+      background:
+        radial-gradient(circle at top left, #6a5acd 0%, transparent 35%),
+        linear-gradient(135deg, #061a2b, #0b5d4b, #123c69, #17112b);
+
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 45px;
+      border-radius: 25px;
+      text-align: center;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      color: #102a43;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    button {
+      border: none;
+      padding: 14px 28px;
+      margin: 10px;
+      border-radius: 15px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #yesBtn {
+      background: #159957;
+      color: white;
+    }
+
+    #yesBtn:hover {
+      background: #0d7a43;
+      transform: scale(1.08);
+    }
+
+    #noBtn {
+      background: #6a5acd;
+      color: white;
+    }
+
+    #noBtn:hover {
+      background: #5546b3;
+      transform: scale(1.08);
+    }
+
+    #message {
+      display: none;
+      margin-top: 25px;
+      background: #e6f7f1;
+      color: #102a43;
+      padding: 25px;
+      border-radius: 18px;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .signature {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #159957;
+    }
+
+    .butterfly {
+      position: absolute;
+      font-size: 25px;
+      animation: float 8s infinite ease-in-out;
+      opacity: 0.8;
+    }
+
+    .b1 { top: 10%; left: 10%; }
+    .b2 { top: 70%; left: 85%; animation-delay: 2s; }
+    .b3 { top: 25%; left: 90%; animation-delay: 4s; }
+    .b4 { top: 85%; left: 15%; animation-delay: 1s; }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-25px) rotate(10deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="butterfly b1">🦋</div>
+  <div class="butterfly b2">🦋</div>
+  <div class="butterfly b3">🦋</div>
+  <div class="butterfly b4">🦋</div>
+
+  <div class="card">
+
+    <div id="question">
+      <h1>🦋 Is Sora a real butterfly?</h1>
+
+      <button id="yesBtn" onclick="showMessage()">Yes</button>
+      <button id="noBtn" onclick="wrongAnswer()">No</button>
+    </div>
+
+    <div id="wrongMessage"></div>
+
+    <div id="message">
+      <p>
+        Dear Amed,
+      </p>
+
+      <p>
+        It was great meeting you. You are talented, good-looking, with a lot of potential, so grow and succeed.
+      </p>
+
+      <p>
+        I wish you all the best in life. However, you PMO with your mentality or overthinking over minor shit, but it's a part of you growing, dumdum. 😭
+      </p>
+
+      <p>
+        I love you, and I wish you a happy birthday. Insha'Allah, you will live until 100 years old and achieve all of your dreams in the best way possible.
+      </p>
+
+      <p class="signature">
+        Yours sincerely,<br>
+        Sana 💚
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById("question").style.display = "none";
+      document.getElementById("wrongMessage").style.display = "none";
+      document.getElementById("message").style.display = "block";
+    }
+
+    function wrongAnswer() {
+      const wrong = document.getElementById("wrongMessage");
+
+      wrong.style.display = "block";
+      wrong.innerHTML = `
+        <div style="
+          margin-top: 20px;
+          padding: 20px;
+          background: #e6f7f1;
+          border-radius: 15px;
+          color: #102a43;
+          font-weight: bold;
+        ">
+          Wrong answer. <br>
+          Use your full brain and try again.
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
